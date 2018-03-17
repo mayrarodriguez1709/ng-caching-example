@@ -5,27 +5,18 @@
 <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
 
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Favorite food" value="Sushi">
+    <input matInput placeholder="Title" [(ngModel)]="post.title" name="title">
   </mat-form-field>
 
-  <!--<div class="form-group">
-    <label for="title">title:</label>
-    <input
-      [(ngModel)]="post.title" name="title"
-      type="text" class="form-control" id="title" required>
-  </div>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Description" [(ngModel)]="post.description" name="description">
+  </mat-form-field>
 
-  <div class="form-group">
-    <label for="description">description:</label>
-    <input
-      [(ngModel)]="post.description" name="description"
-      type="text" class="form-control" id="description" required>
-  </div>
-  <button type="submit">Create Post</button>-->
+  <button type="submit" mat-button>Create Post</button>
 </form>
 
 
-<button type="button" (click)="getAllPosts()">Get All Posts</button>
+<button type="button" (click)="getAllPosts()" mat-button>Get All Posts</button>
 
 <p>Response:</p>
 <div [ngStyle]="{'color': status === 'FAILED' ? 'red' : 'black'}">
